@@ -10,6 +10,7 @@ import 'Developer.dart';
 import 'KonversiSuhu.dart';
 import 'Start.dart';
 import 'Virus.dart';
+import 'other.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -68,10 +69,11 @@ class _HomeState extends State<Home> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextWidget("Welcome!", 17, Colors.black.withOpacity(0.7), FontWeight.bold),
-                          TextWidget("Thalita Zharifa", 25, Colors.black, FontWeight.bold),
+                          TextWidget("Welcome!", 17,
+                              Colors.black.withOpacity(0.7), FontWeight.bold),
+                          TextWidget("Thalita Zharifa", 25, Colors.black,
+                              FontWeight.bold),
                         ],
-
                       ),
                       InkWell(
                         onTap: () {
@@ -79,7 +81,6 @@ class _HomeState extends State<Home> {
                         },
                         child: const Icon(Icons.logout_rounded),
                       ),
-
                     ],
                   ),
                 ),
@@ -179,7 +180,8 @@ class _HomeState extends State<Home> {
                                       height: 5,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         TextWidget(
                                           "Stream with  ",
@@ -219,8 +221,8 @@ class _HomeState extends State<Home> {
                               width: double.infinity,
                               child: Row(
                                 children: [
-                                  TextWidget("120K people join live Stream!", 15,
-                                      Colors.white, FontWeight.bold,
+                                  TextWidget("120K people join live Stream!",
+                                      15, Colors.white, FontWeight.bold,
                                       letterSpace: 1),
                                   const SizedBox(
                                     width: 10,
@@ -283,23 +285,28 @@ class _HomeState extends State<Home> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextWidget("Our Doctors", 25, Colors.black.withOpacity(0.8),
-                            FontWeight.bold,
+                        TextWidget("Our Doctors", 25,
+                            Colors.black.withOpacity(0.8), FontWeight.bold,
                             letterSpace: 0),
                         InkWell(
                           onTap: () async {
                             animator();
                             setState(() {});
-                            await Future.delayed(const Duration(milliseconds: 500));
-                            await Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            await Future.delayed(
+                                const Duration(milliseconds: 500));
+                            await Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
                               return SeeAll();
                             }));
                             setState(() {
                               animator();
                             });
                           },
-                          child: TextWidget("See all", 15,
-                              Colors.blue.shade600.withOpacity(0.8), FontWeight.bold,
+                          child: TextWidget(
+                              "See all",
+                              15,
+                              Colors.blue.shade600.withOpacity(0.8),
+                              FontWeight.bold,
                               letterSpace: 0),
                         ),
                       ],
@@ -318,25 +325,31 @@ class _HomeState extends State<Home> {
                     items: const [
                       Icon(Icons.home_filled, color: Colors.black, size: 30),
                       Icon(Icons.calculate, color: Colors.black, size: 30),
-                      Icon(Icons.whatshot_outlined, color: Colors.black, size: 30),
-                      Icon(Icons.graphic_eq_rounded, color: Colors.black, size: 30),
+                      Icon(Icons.whatshot_outlined,
+                          color: Colors.black, size: 30),
+                      Icon(Icons.graphic_eq_rounded,
+                          color: Colors.black, size: 30),
                     ],
                     onTap: (index) {
                       setState(() {
                         _currentIndex = index;
                         if (_currentIndex == 1) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return Kalkulator();
                           }));
                         } else if (_currentIndex == 2) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return BMI();
                           }));
-                        }  else if (_currentIndex == 3) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        } else if (_currentIndex == 3) {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
                             return GrafikPage();
                           }));
-                        }});
+                        }
+                      });
                     },
                     index: _currentIndex,
                   ),
@@ -400,9 +413,11 @@ class _HomeState extends State<Home> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextWidget(name, 20, Colors.black, FontWeight.bold, letterSpace: 0),
+                TextWidget(name, 20, Colors.black, FontWeight.bold,
+                    letterSpace: 0),
                 const SizedBox(height: 5),
-                TextWidget(specialist, 17, Colors.black, FontWeight.bold, letterSpace: 0),
+                TextWidget(specialist, 17, Colors.black, FontWeight.bold,
+                    letterSpace: 0),
                 const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -461,13 +476,17 @@ class _HomeState extends State<Home> {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return KonversiSuhu();
               }));
-            } else if (txt == "Dev"){
+            } else if (txt == "Dev") {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return Developer();
               }));
-            } else if (txt == "Virus"){
+            } else if (txt == "Virus") {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return Virus();
+              }));
+            } else if (txt == "Other") {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Other();
               }));
             }
           },
@@ -504,6 +523,7 @@ class _HomeState extends State<Home> {
       ],
     );
   }
+
   Future<void> showLogoutConfirmationDialog(BuildContext context) async {
     return showDialog(
       context: context,
@@ -521,7 +541,8 @@ class _HomeState extends State<Home> {
             TextButton(
               child: Text("Yes"),
               onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Startpage()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Startpage()));
               },
             ),
           ],

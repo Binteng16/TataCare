@@ -5,7 +5,9 @@ class Developer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Developer'),
+        title: Text(
+          'About Developer',
+        ),
         backgroundColor: Colors.blue.shade900,
       ),
       body: SingleChildScrollView(
@@ -66,14 +68,17 @@ class Developer extends StatelessWidget {
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Thalita Zharifa is a talented mobile app developer with a strong dedication to crafting innovative applications. With over 5 years of experience in the industry, Thalita has successfully been the backbone of critical projects, including the captivating TataCare mobile app. Her expertise encompasses. ',
+                      text:
+                          'Thalita Zharifa is a talented mobile app developer with a strong dedication to crafting innovative applications. With over 5 years of experience in the industry, Thalita has successfully been the backbone of critical projects, including the captivating TataCare mobile app. Her expertise encompasses. ',
                     ),
                     TextSpan(
-                      text: 'developing applications for both Android and iOS platforms',
+                      text:
+                          'developing applications for both Android and iOS platforms',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     TextSpan(
-                      text: ', creating captivating user interfaces, and efficiently managing projects. Thalita is always eager to create modern and functional solutions, making her a valuable asset in the world of mobile app development. jk',
+                      text:
+                          ', creating captivating user interfaces, and efficiently managing projects. Thalita is always eager to create modern and functional solutions, making her a valuable asset in the world of mobile app development. jk',
                     ),
                   ],
                 ),
